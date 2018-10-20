@@ -74,7 +74,7 @@ static unsigned long	top,bottom;
 static unsigned long	state=0;
 static unsigned long	npar,par[NPAR];
 static unsigned long	ques=0;
-static unsigned char	attr=0x07;
+/*static*/ unsigned char	attr=0x07;
 
 static void sysbeep(void);
 

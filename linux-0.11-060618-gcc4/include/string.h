@@ -24,7 +24,7 @@ extern char * strerror(int errno);
  *		(C) 1991 Linus Torvalds
  */
  
-extern inline char * strcpy(char * dest,const char *src)
+static inline char * strcpy(char * dest,const char *src)
 {
 __asm__("cld\n"
 	"1:\tlodsb\n\t"
@@ -51,7 +51,7 @@ __asm__("cld\n"
 return dest;
 }
 
-extern inline char * strcat(char * dest,const char * src)
+static inline char * strcat(char * dest,const char * src)
 {
 __asm__("cld\n\t"
 	"repne\n\t"
@@ -85,7 +85,7 @@ __asm__("cld\n\t"
 return dest;
 }
 
-extern inline int strcmp(const char * cs,const char * ct)
+static inline int strcmp(const char * cs,const char * ct)
 {
 register int __res ;
 __asm__("cld\n"
@@ -158,7 +158,7 @@ __asm__("cld\n\t"
 return __res;
 }
 
-extern inline int strspn(const char * cs, const char * ct)
+static inline int strspn(const char * cs, const char * ct)
 {
 register char * __res;
 __asm__("cld\n\t"
@@ -182,7 +182,7 @@ __asm__("cld\n\t"
 return __res-cs;
 }
 
-extern inline int strcspn(const char * cs, const char * ct)
+static inline int strcspn(const char * cs, const char * ct)
 {
 register char * __res;
 __asm__("cld\n\t"
@@ -206,7 +206,7 @@ __asm__("cld\n\t"
 return __res-cs;
 }
 
-extern inline char * strpbrk(const char * cs,const char * ct)
+static inline char * strpbrk(const char * cs,const char * ct)
 {
 register char * __res ;
 __asm__("cld\n\t"
@@ -233,7 +233,7 @@ __asm__("cld\n\t"
 return __res;
 }
 
-extern inline char * strstr(const char * cs,const char * ct)
+static inline char * strstr(const char * cs,const char * ct)
 {
 register char * __res ;
 __asm__("cld\n\t" \
@@ -260,7 +260,7 @@ __asm__("cld\n\t" \
 return __res;
 }
 
-extern inline int strlen(const char * s)
+static inline int strlen(const char * s)
 {
 register int __res ;
 __asm__("cld\n\t"
@@ -274,7 +274,7 @@ return __res;
 
 extern char * ___strtok;
 
-extern inline char * strtok(char * s,const char * ct)
+static inline char * strtok(char * s,const char * ct)
 {
 register char * __res ;
 __asm__("testl %1,%1\n\t"
@@ -343,7 +343,7 @@ __asm__("cld\n\t"
 return dest;
 }
 
-extern inline void * memmove(void * dest,const void * src, int n)
+static inline void * memmove(void * dest,const void * src, int n)
 {
 if (dest<src)
 __asm__("cld\n\t"
@@ -376,7 +376,7 @@ __asm__("cld\n\t"
 return __res;
 }
 
-extern inline void * memchr(const void * cs,char c,int count)
+static inline void * memchr(const void * cs,char c,int count)
 {
 register void * __res ;
 if (!count)

@@ -10,10 +10,10 @@ AR	=ar
 AS	=as
 LD	=ld
 LDFLAGS	=-s -x
-CC	=gcc -mcpu=i386
+CC	=gcc -fno-stack-protector -mcpu=i386
 CFLAGS	=-Wall -O -fstrength-reduce -fomit-frame-pointer \
 	-finline-functions -nostdinc -I../../include
-CPP	=gcc -E -nostdinc -I../../include
+CPP	=gcc -fno-stack-protector -E -nostdinc -I../../include
 
 .c.s:
 	$(CC) $(CFLAGS) \
