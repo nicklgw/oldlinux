@@ -11,3 +11,7 @@
 1. linux 0.12 源码
 2. linux 0.12 各个章节笔记
 3. 源码编译脚本及bochs启动运行脚本
+
+
+《操作系统概念》(第七版)，Silberschatz、Galvin和Gagne编著，高等教育出版社
+《Linux内核剖析》，赵炯编著，电子工业出版社
