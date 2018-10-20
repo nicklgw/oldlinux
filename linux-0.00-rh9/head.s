@@ -7,6 +7,7 @@ LDT0_SEL	= 0x28
 TSS1_SEL	= 0X30
 LDT1_SEL	= 0x38
 .global startup_32
+.code32          # 加上这句话
 .text
 startup_32:
 	movl $0x10,%eax
