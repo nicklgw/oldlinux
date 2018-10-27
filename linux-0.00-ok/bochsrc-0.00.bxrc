@@ -1,0 +1,6 @@
+romimage: file=$BXSHARE/BIOS-bochs-latest
+vgaromimage: file=$BXSHARE/VGABIOS-lgpl-latest
+megs: 16
+floppya: 1_44="Image", status=inserted
+boot: a
+log: bochsout.txt
